@@ -1,0 +1,20 @@
+# KRX raw data is never committed (redistribution terms). Users download it themselves.
+data/raw/
+data/*.csv
+*.csv
+
+# Assignment answers and TA notes
+forwards_ta.csv
+조교용_메모.md
+*_solution.ipynb
+
+# Papers and prospectuses (copyright)
+ref/
+*.pdf
+
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.env
