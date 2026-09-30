@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "volsurface"
+version = "0.1.0"
+description = "KOSPI200 option SABR vol surface with static-arbitrage checks"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2.0", "scipy", "pandas>=2.2"]
+
+[project.optional-dependencies]
+notebook = ["matplotlib", "jupyterlab", "nbconvert", "nbformat"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

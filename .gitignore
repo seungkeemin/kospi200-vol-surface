@@ -2,6 +2,8 @@
 data/raw/
 data/*.csv
 *.csv
+# Model output used by tests (SABR parameters, not market data)
+!tests/fixtures/*.csv
 
 # Assignment answers and TA notes
 forwards_ta.csv
