@@ -2,19 +2,9 @@
 
 > **English summary.** I re-priced an issued ELS (Mirae Asset Securities No. 38133: KOSPI200, 3Y, step-down autocall, 40% knock-in) using the volatility smile read from KRX KOSPI200 option prices. With the same flat 35.47% vol as the disclosure, my Monte Carlo reproduces the disclosed fair value (9,797 vs 9,794 won per 10,000). With the full smile (SABR surface → Dupire local vol) the price falls to 9,614 won: put skew costs 239 won because crash paths hit the knock-in more often, and a downward-sloping term structure gives back 55 won. Under the smile the probability of a loss at maturity rises from 8.5% to 11.0%. The flat price leaves the issuer about 206 won of margin; with skew it is about 386 won, but that extra skew risk sits in 3-year deep out-of-the-money puts that cannot be hedged with listed options. Written as the solution to an assignment I designed as team lead of the U.FE.A financial engineering society.
 
-KOSPI200 옵션 시장의 변동성 스마일로 실제 발행된 ELS를 다시 평가했습니다. 공시가와 같은 단일 변동성으로 공시가를 재현한 뒤, 스마일을 반영하면 가격이 얼마나, 왜 달라지는지 분해했습니다.
+KOSPI200 옵션 시장의 변동성 스마일로 실제 발행된 ELS를 다시 평가했습니다. 공시가와 같은 단일 변동성으로 공시가를 재현한 뒤, 스마일을 반영하면 가격이 얼마나, 왜 달라지는지 분해했습니다. U.FE.A 금융공학학회 팀장으로 설계한 실습과제의 해답을 정리한 저장소입니다.
 
 ![ELS 가격 분해](figures/els_price_bridge.png)
-
-## 한눈에 보기
-
-| | |
-|---|---|
-| **무엇을** | KRX KOSPI200 옵션 가격에서 행사가·만기별 변동성 곡면을 만들고, 그 곡면으로 미래에셋증권 제38133회 ELS를 Monte Carlo로 평가 |
-| **결과** | 공시와 같은 단일 vol 35.47%로 9,797원(공시 9,794원) 재현. 스마일을 반영하면 9,614원으로 181원(1.8%) 낮아짐 |
-| **왜 다른가** | 하락할수록 변동성이 커지는 스큐 때문에 낙인 확률이 올라 −239원. 만기가 길수록 vol이 낮아지는 기간구조가 +55원 상쇄 |
-| **시사점** | 발행사 마진 여지는 단일 vol 기준 약 206원, 스큐 반영 시 약 386원. 다만 늘어난 부분은 상장 옵션으로 헤지할 수 없는 3년 깊은 외가격 풋에서 나옴 |
-| **역할** | U.FE.A 금융공학학회 팀장으로 실습과제를 설계하고 해답을 작성 |
 
 ## 평가한 상품
 
